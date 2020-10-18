@@ -5,5 +5,7 @@ This Repository helps you to get solution for common problems you encounter whil
 
 #1.
 cout_class_object.cpp:
-  // cout class object (without any function call).
-  // cout << classObject;
+
+    // cout class object (without any function call).
+
+    // cout << classObject;
