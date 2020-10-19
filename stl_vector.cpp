@@ -1,6 +1,10 @@
 // common functionality of vector
 
 #include <iostream>
+#include <set>
+#include <map>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <algorithm>
 
@@ -76,5 +80,22 @@ int main()
     for (auto e : v)
         cout << e << " ";
     cout << endl;
+    
+    
+    // sort
+    cout << "\n\n" << "Sort" << endl;
+    v = {99,4,12,54,634,5,37,455,26,7568,76,765,5,67,5434,32456,568,76,5,2345,78,67,53,45,356,546,435,34};
+    std::sort(v.begin()+3, v.end()-3);
+    cout << "\n";
+    for (auto e : v)
+        cout << e << " ";
+    cout << endl;
+    
+    std::sort(v.rbegin()+3, v.rend()-3);
+    cout << "\n";
+    for (auto e : v)
+        cout << e << " ";
+    cout << endl;
+    
 }
 
