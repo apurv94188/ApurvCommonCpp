@@ -1,8 +1,7 @@
 /*
-This code will sortout your confusion with following usage of set, map, unordered_set, unordered_map, vector, string
+This code will sortout your confusion with following usage of set, map, unordered_set, unordered_map
 
-1. lower_bound
-2. upper_bound
+1. lower_bound / upper_bound
 3. find
 4. insert
 5. {} initializatiion
@@ -12,6 +11,7 @@ This code will sortout your confusion with following usage of set, map, unordere
 9. Modification at index
 10. custom sort
 11. iterate over the data structure
+12. insert a vector
 
 */
 
@@ -32,7 +32,7 @@ int main()
     auto find_map = m.find(8);
     cout << find_map->first << ":" << find_map->second << " ";
     
-    map<int,int>::iterator itr_find_map = m.find(90);
+    map<int,int>::iterator itr_find_map = m.find(93);
     cout << itr_find_map->first << ":" << itr_find_map->second << " ";
     
     cout << 8 << ":" << m[8] << " ";
@@ -41,7 +41,18 @@ int main()
     auto lower_bound_map = m.lower_bound(7);
     cout << lower_bound_map->first << ":" << lower_bound_map->second << " ";
     
+    m.insert({3,4}); // already exists  -- doesn't throw any error
+    m.insert({16,7});
     
+    m.erase(5);
+    m.erase(99);    // doesn't exist still 
+    m.erase(find_map);  // can also give an iterator - but element should exist otherwise throws error
+    // m.erase(lower_bound_map);  // this throws segmentation fault as the itr points to 8 which was erase in the prev line
+    
+    cout << "map element: ";
+    for (pair<int,int> e : m)
+        cout << e.first <<" " << e.second << " ";
+        
     //*** unordered_map
     cout << "\n\n" <<"Unordered Map"<< endl;
     unordered_map<int,int> um = {{3,4},{5,4},{8,9},{93,2}};
@@ -100,6 +111,4 @@ int main()
     
     return 0;
 }
-
-
 
