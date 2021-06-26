@@ -49,6 +49,13 @@ int main()
     cout << "map element: ";
     for (pair<int,int> e : m)
         cout << e.first <<" " << e.second << " ";
+    
+    // function to erase in a given range
+    // find() returns the iterator reference to
+    // the position where the element is
+    auto itr_erase_begin = m.find(2);
+    auto itr_erase_end = m.find(5);
+    mp.erase(itr_erase_begin, itr_erase_end); 
     // *** * ***
         
     
