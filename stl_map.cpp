@@ -33,7 +33,9 @@ int main()
     
     
     // *** insert ***
-    m.insert({3,8}); // already exists  -- gets override -- doesn't throw any error
+    m.insert({20,200});
+    m.insert({20,250}); // already exists  -- original value is retained -- doesn't throw any error
+    cout << m[20]; // 200
     m.insert({16,7});
     // *** * ***
     
